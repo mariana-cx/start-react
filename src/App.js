@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+// import components 
+import { InputData } from './components/InputDatas';
+import { MyName } from './components/MyName';
 
-function App() {
+export function AppLearnReact() {
+
+  let people = ['João Henrique Xavier', 'Lebron', 'Aaliyah', 'Diamond', 'Dominique', 'Aliyah'];
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* imported components */}
+        <InputData buttonType="Add" />
+        {
+          // map function (loop through array and output my name for each element)
+          people.map((eachPeople, index) => (
+            <div key={index}>
+              <MyName myName={eachPeople} />
+            </div>
+          ))
+        }
+        <InputData buttonType="Cancel" />
       </header>
     </div>
   );
 }
 
-export default App;
