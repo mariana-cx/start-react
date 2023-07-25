@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  display: flex;
 }
 
 .App-logo {
@@ -21,7 +21,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  margin-top: auto;
+  margin-left: 35%;
 }
 
 .App-link {
@@ -35,4 +37,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Box{
+  height: 200px;
+  width: 250px;
+  border: 1px solid black;
+  margin-top: 150px;
+  margin-left: 20%;
 }
