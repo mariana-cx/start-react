@@ -7,25 +7,26 @@ let people = ['João Henrique Xavier', 'Lebron', 'Aaliyah', 'Diamond', 'Dominiqu
 export function AppLearnReact() {
   const [names, setNames] = useState(people)
   const [currentName, setCurrentName] = useState("")
+  const [newArr, setNewArr] = useState([])
   useEffect(() => {
     setCurrentName("")
   }, [names])
   function removeName(arrNames, person) {
     let result = arrNames.filter(e => e != person)
+    setNewArr([...newArr, person])
 
     return result
   }
-  console.log(people)
+  
   return (<div className="App">
     <div className="App-header">
       <span>
-        <input value={currentName} onChange={(e) => {
-          setCurrentName(e.target.value);
-          console.log("Current name is: ", currentName);
-        }} />
+        <input value={currentName} onChange={(e) => setCurrentName(e.target.value)
+        } />
         <button className="inputButton" onClick={() => {
           setNames([...names, currentName]);
           setCurrentName("");
+
         }}><strong>Add</strong></button>
       </span>
 
@@ -33,9 +34,10 @@ export function AppLearnReact() {
 
     </div>
     <div className='Box'>
-      
+      {newArr.map(e => <p key={e}>{e}</p>)}
+
     </div>
   </div >
-  
+
   );
 }
