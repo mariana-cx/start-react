@@ -34,7 +34,7 @@ export function AppLearnReact() {
 
     </div>
     <div className='Box'>
-      {newArr.map(e => <p key={e}>{e}</p>)}
+      {newArr.map((e,i) => <p key={i}>{e}</p>)}
 
     </div>
   </div >
