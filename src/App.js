@@ -11,9 +11,9 @@ export function AppLearnReact() {
   useEffect(() => {
     setCurrentName("")
   }, [names])
-  function removeName(arrNames, person) {
-    let result = arrNames.filter(e => e != person)
-    setNewArr([...newArr, person])
+  function removeName(arrNames, index) {
+    let result = arrNames.filter((_e,i) => i != index)
+    setNewArr([...newArr, arrNames[index]])
 
     return result
   }
@@ -30,7 +30,7 @@ export function AppLearnReact() {
         }}><strong>Add</strong></button>
       </span>
 
-      {names.map(e => <p onClick={() => setNames(removeName(names, e))} key={e}>{e}</p>)}
+      {names.map((e,i) => <p onClick={() => setNames(removeName(names, i))} key={i}>{e}</p>)}
 
     </div>
     <div className='Box'>
