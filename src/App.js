@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 let people = ['João Henrique Xavier', 'Lebron', 'Aaliyah', 'Diamond', 'Dominique', 'Aliyah'];
 
@@ -9,7 +8,7 @@ export function AppLearnReact() {
   const [currentName, setCurrentName] = useState("")
   const [newArr, setNewArr] = useState([])
   useEffect(() => {
-    setCurrentName("")
+    // setCurrentName("")
   }, [names])
   function removeName(arrNames, index) {
     let result = arrNames.filter((_e,i) => i != index)
